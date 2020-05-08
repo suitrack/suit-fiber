@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 )
 
-// connection hub for managing clients
+// Hub connection hub for managing clients
 type Hub struct {
 	count     int64            // number of clients connected
 	clients   map[*Client]bool // map of connected clients

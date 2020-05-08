@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-// client for handling read/write
+// Client for handling read/write
 type Client struct {
 	conn *websocket.Conn // fiber/fasthttp websocket connnection
 	hub  *Hub            // reference to hub

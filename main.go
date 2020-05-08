@@ -8,6 +8,7 @@ import (
 	"github.com/gofiber/helmet"
 	"github.com/gofiber/logger"
 	"github.com/gofiber/websocket"
+	"log"
 )
 
 const TextType = 1
@@ -39,5 +40,8 @@ func main() {
 	}))
 
 	// just listen
-	app.Listen(4500)
+	err := app.Listen(4500)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
