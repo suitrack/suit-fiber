@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/gofiber/websocket"
+	"github.com/gofiber/websocket/v2"
 	"log"
 )
 
@@ -61,7 +61,7 @@ func (c *Client) write() {
 }
 
 // Create new Client
-func newClient(h *Hub, c *websocket.Conn) {
+func NewClient(h *Hub, c *websocket.Conn) {
 	// create a new client and push to hub
 	client := &Client{conn: c, hub: h, send: make(chan []byte, 256)}
 	client.hub.add <- client
